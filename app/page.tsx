@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 import About from "@/app/about/page";
 
 async function getProducts() {
-  const res = await fetch("http://localhost:5000/api/products", {
+  const res = await fetch("https://express-store-production.up.railway.app/api/products", {
     cache: "no-store",
   });
   return res.json();
