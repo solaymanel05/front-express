@@ -29,6 +29,7 @@ export default async function Home() {
               name={p.name}
               price={p.price}
               image={p.image}
+             quantity={1}  
             />
           ))}
         </div>
