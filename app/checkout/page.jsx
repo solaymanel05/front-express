@@ -39,11 +39,14 @@ export default function CheckoutPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(orderData),
-      });
+      const res = await fetch(
+        "https://express-store-production.up.railway.app/api/orders",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(orderData),
+        },
+      );
 
       if (res.ok) {
         setSuccess(true);
@@ -120,7 +123,9 @@ export default function CheckoutPage() {
               key={item.id}
               className="flex justify-between items-center text-gray-700"
             >
-              <span>{item.name} x {item.quantity}</span>
+              <span>
+                {item.name} x {item.quantity}
+              </span>
               <span>{item.price * item.quantity} DH</span>
             </div>
           ))}
