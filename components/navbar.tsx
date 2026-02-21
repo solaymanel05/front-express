@@ -9,42 +9,44 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black text-gray-300 shadow-md">
+    <nav className="fixed top-0 right-0 w-full z-50 bg-black text-gray-300 shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        {/* Logo */}
-        <h1 className="text-1xl font-light font-stretch-200% text-[#d2d1d1]">
-          EXPRESS
+        {/* الشعار */}
+        <h1 className="text-1xl font-light tracking-widest text-[#d2d1d1]">
+        <Link href="/" >
+            EXPRESS
+        </Link>
         </h1>
 
-        {/* Desktop Menu */}
+        {/* القائمة في الحاسوب */}
         <ul className="hidden md:flex gap-8 items-center">
           <li>
             <Link href="/" className="hover:text-white transition">
-              Home
+              الرئيسية
             </Link>
           </li>
 
           <li>
             <Link href="/about" className="hover:text-white transition">
-              About
+              من نحن
             </Link>
           </li>
 
           <li className="relative">
             <Link href="/cart" className="hover:text-white transition">
-              🛒 Cart
+              🛒 السلة
             </Link>
 
             {cart.length > 0 && (
-              <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+              <span className="absolute -top-2 -left-3 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 {cart.length}
               </span>
             )}
           </li>
         </ul>
 
-        {/* Mobile Button */}
+        {/* زر الموبايل */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-white text-2xl"
@@ -53,7 +55,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* القائمة في الهاتف */}
       <div
         className={`md:hidden bg-black transition-all duration-300 overflow-hidden ${
           isOpen ? "max-h-60 py-4" : "max-h-0"
@@ -66,7 +68,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="hover:text-white transition"
             >
-              Home
+              الرئيسية
             </Link>
           </li>
 
@@ -76,7 +78,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="hover:text-white transition"
             >
-              About
+              من نحن
             </Link>
           </li>
 
@@ -86,11 +88,11 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="hover:text-white transition"
             >
-              🛒 Cart
+              🛒 السلة
             </Link>
 
             {cart.length > 0 && (
-              <span className="absolute -top-2 -right-6 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+              <span className="absolute -top-2 -left-6 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 {cart.length}
               </span>
             )}

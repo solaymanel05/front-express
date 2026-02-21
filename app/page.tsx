@@ -8,7 +8,7 @@ async function getProducts() {
   try {
     const res = await fetch(
       "https://express-store-production.up.railway.app/api/products",
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
 
     if (!res.ok) {
@@ -31,11 +31,13 @@ export default async function Home() {
   return (
     <div>
       <Hero />
-      <About />
+    
+        <About />
+    
 
       <main className="p-6 bg-[#ffff]">
         <h2 className="text-4xl pb-9 font-extralight mb-6 text-neutral-900 text-center">
-          Our Products
+          المنتجات
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

@@ -17,7 +17,9 @@ export default function CheckoutPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#dad7d733]">
         <div className="bg-white p-8 rounded-lg shadow-md text-center">
-          <p className="text-lg text-gray-600 mb-4">🛒 Your cart is empty</p>
+          <p className="text-lg text-gray-600 mb-4">
+            🛒 سلة المشتريات فارغة
+          </p>
         </div>
       </div>
     );
@@ -25,7 +27,7 @@ export default function CheckoutPage() {
 
   const handleConfirmOrder = async () => {
     if (!name || !phone || !city || !address) {
-      alert("Please fill in all fields");
+      alert("يرجى ملء جميع المعلومات المطلوبة");
       return;
     }
 
@@ -45,18 +47,18 @@ export default function CheckoutPage() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(orderData),
-        },
+        }
       );
 
       if (res.ok) {
         setSuccess(true);
         clearCart();
       } else {
-        alert("Failed to place order");
+        alert("فشل في إرسال الطلب، حاول مرة أخرى");
       }
     } catch (error) {
       console.error(error);
-      alert("Error placing order");
+      alert("حدث خطأ أثناء تأكيد الطلب");
     } finally {
       setLoading(false);
     }
@@ -67,10 +69,10 @@ export default function CheckoutPage() {
       <div className="min-h-screen flex items-center justify-center bg-[#dad7d733]">
         <div className="bg-white p-8 rounded-lg shadow-md text-center">
           <h2 className="text-2xl font-bold text-green-600 mb-4">
-            ✅ Order Placed Successfully!
+            ✅ تم تأكيد الطلب بنجاح!
           </h2>
           <p className="text-gray-700 mb-6">
-            Thank you {name}, your order has been received.
+            شكراً لك {name}، لقد توصلنا بطلبك وسنتواصل معك قريباً.
           </p>
         </div>
       </div>
@@ -81,67 +83,68 @@ export default function CheckoutPage() {
     <main className="min-h-screen bg-[#dad7d733] flex items-center justify-center mt-7 p-6">
       <div className="bg-white w-full max-w-md rounded-xl shadow-lg p-6 space-y-4">
         <h1 className="text-2xl font-bold mb-4 text-center text-neutral-950">
-          Checkout
+          إتمام الطلب
         </h1>
 
-        {/* Customer Info */}
-        <div className="space-y-3 bg">
+        {/* معلومات الزبون */}
+        <div className="space-y-3">
           <input
             type="text"
-            placeholder="Full Name"
+            placeholder="الاسم الكامل"
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full px-4 py-2 border rounded-lg text-[#0c0c0c] focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
           <input
             type="tel"
-            placeholder="Phone Number"
+            placeholder="رقم الهاتف"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             className="w-full px-4 py-2 border rounded-lg text-[#0c0c0c] focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
           <input
             type="text"
-            placeholder="City"
+            placeholder="المدينة"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             className="w-full px-4 py-2 border rounded-lg text-[#0c0c0c] focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
           <input
             type="text"
-            placeholder="Address"
+            placeholder="العنوان الكامل"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             className="w-full px-4 py-2 border rounded-lg text-[#0c0c0c] focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
         </div>
 
-        {/* Cart Summary */}
-        <div className="border-t pt-4 space-y-2">
+        {/* ملخص الطلب */}
+        <div className="border-t pt-4 space-y-2 text-right">
           {cart.map((item) => (
             <div
               key={item.id}
               className="flex justify-between items-center text-gray-700"
             >
               <span>
-                {item.name} x {item.quantity}
+                {item.name} × {item.quantity}
               </span>
-              <span>{item.price * item.quantity} DH</span>
+              <span>{item.price * item.quantity} درهم</span>
             </div>
           ))}
+
           <div className="flex justify-between font-bold text-black text-lg">
-            <span>Total</span>
-            <span>{total} DH</span>
+            <span>المجموع</span>
+            <span>{total} درهم</span>
           </div>
         </div>
 
-        {/* Confirm Button */}
+        {/* زر التأكيد */}
         <button
           onClick={handleConfirmOrder}
           disabled={loading}
           className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-neutral-800 transition disabled:opacity-50"
         >
-          {loading ? "Placing Order..." : "Confirm Order"}
+          {loading ? "جارٍ تأكيد الطلب..." : "تأكيد الطلب"}
         </button>
       </div>
     </main>

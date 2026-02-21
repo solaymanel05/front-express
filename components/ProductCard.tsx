@@ -51,7 +51,7 @@ export default function ProductCard({
 })}
   className=" cursor-pointer  mt-5 inline-flex items-center justify-center px-6 py-2.5 bg-neutral-900 text-white text-sm sm:text-base font-medium rounded-full shadow-md hover:bg-neutral-800 hover:shadow-lg transition-all duration-300"
 >
-  Add to Cart
+ أضف إلى السلة
 </button>
 
       </div>

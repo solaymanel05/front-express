@@ -1,77 +1,77 @@
 "use client";
 
 export default function About() {
-  const images =  "/hero.png"
+  const images = "/hero.png";
+
   return (
-    <section className="bg-white pb-20 px-6">
+    <section className="bg-white pb-20 px-6 mt-20">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         
-        {/* LEFT IMAGE */}
+        {/* الصورة */}
         <div className="relative">
           <img
             src={images}
-            alt="About Express Store"
+            alt="حول متجر إكسبريس"
             className="w-full h-[420px] object-cover rounded-2xl shadow-2xl"
           />
           <div className="absolute -bottom-6 -right-6 bg-amber-500 text-white px-6 py-4 rounded-xl shadow-lg">
-            <p className="text-lg font-semibold">Trusted by Customers</p>
+            <p className="text-lg font-semibold">موثوق من طرف عملائنا</p>
           </div>
         </div>
 
-        {/* RIGHT CONTENT */}
+        {/* المحتوى */}
         <div>
           <h2 className="text-4xl font-extrabold text-neutral-900 mb-6">
-            About Express Store
+            من نحن
           </h2>
 
           <p className="text-neutral-600 leading-relaxed mb-6">
-            Express Store is a modern e-commerce platform built to deliver a
-            fast, reliable, and simple shopping experience. Our mission is to
-            provide high-quality products at competitive prices while ensuring
-            customer satisfaction at every step.
+            متجر إكسبريس هو منصة تسوق إلكتروني عصرية تهدف إلى تقديم تجربة
+            سريعة، موثوقة وسهلة. نسعى لتوفير منتجات عالية الجودة بأسعار
+            تنافسية مع ضمان رضا العملاء في كل خطوة.
           </p>
 
           <p className="text-neutral-600 leading-relaxed mb-8">
-            We focus on efficiency, secure ordering, and quick delivery across
-            Morocco. With WhatsApp ordering and responsive customer support,
-            shopping has never been easier.
+            نركز على السرعة في التنفيذ، أمان الطلبات، والتوصيل السريع إلى جميع
+            مدن المغرب. مع إمكانية الطلب عبر واتساب وخدمة عملاء متجاوبة،
+            أصبح التسوق أسهل من أي وقت مضى.
           </p>
 
-          {/* FEATURES */}
+          {/* المميزات */}
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="p-4 bg-amber-50 rounded-xl">
               <h4 className="font-semibold text-neutral-900 mb-2">
-                Fast Delivery
+                توصيل سريع
               </h4>
               <p className="text-sm text-neutral-600">
-                Quick shipping and reliable logistics across Morocco.
+                شحن سريع وخدمة توصيل موثوقة في جميع أنحاء المغرب.
               </p>
             </div>
 
             <div className="p-4 bg-amber-50 rounded-xl">
               <h4 className="font-semibold text-neutral-900 mb-2">
-                Quality Products
+                منتجات بجودة عالية
               </h4>
               <p className="text-sm text-neutral-600">
-                Carefully selected items with guaranteed quality.
+                اختيار دقيق للمنتجات مع ضمان الجودة.
               </p>
             </div>
 
             <div className="p-4 bg-amber-50 rounded-xl">
               <h4 className="font-semibold text-neutral-900 mb-2">
-                Secure Ordering
+                طلب آمن
               </h4>
               <p className="text-sm text-neutral-600">
-                Safe and smooth checkout process.
+                عملية شراء آمنة وسلسة بدون تعقيد.
               </p>
             </div>
 
             <div className="p-4 bg-amber-50 rounded-xl">
               <h4 className="font-semibold text-neutral-900 mb-2">
-                Customer Support
+                دعم العملاء
               </h4>
               <p className="text-sm text-neutral-600">
-                Responsive assistance via WhatsApp and email.
+                دعم سريع ومتجاوب عبر واتساب والبريد الإلكتروني.
               </p>
             </div>
           </div>
